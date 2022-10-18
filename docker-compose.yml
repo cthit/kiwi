@@ -1,0 +1,11 @@
+version: "3"
+services:
+  db:
+    image: postgres:12
+    environment:
+      POSTGRES_DB: kiwi
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      TZ: "Europe/Stockholm"
+    ports:
+      - 5432:5432

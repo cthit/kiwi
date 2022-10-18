@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Kiwi {
+  id Int @unique @default(autoincrement())
+  birthday DateTime @default(now())
+  thiccness Int @default(100)
+  saturation Int @default(100)
+	fullness Int @default(100)
+	fitness Int @default(100)
+	love Int @default(100)
+	currentMood String
+}
+
+// TODO: Check gamma integration
+//model User {
+//  id Int @unique @default(autoincrement())
+//}
+
+model Food {
+  id Int @unique @default(autoincrement())
+  name String 
+  saturation Int
+  fulfillment Int
+  imageURL String
+}
